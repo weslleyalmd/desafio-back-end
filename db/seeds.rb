@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 transaction_type_list = [
-	[1, "Débito", "Entrada"],
-	[2, "Boleto", "Saída"],
-	[3, "Financiamento", "Saída"],
-	[4, "Crédito", "Entrada"],
-	[5, "Recebimento Empréstimo", "Entrada"],
-	[6, "Vendas", "Entrada"],
-	[7, "Recebimento TED", "Entrada"],
-	[8, "Recebimento DOC", "Entrada"],
-	[9, "Aluguel", "Saída"]
+	[1, "Débito", "inflow"],
+	[2, "Boleto", "outflow"],
+	[3, "Financiamento", "outflow"],
+	[4, "Crédito", "inflow"],
+	[5, "Recebimento Empréstimo", "inflow"],
+	[6, "Vendas", "inflow"],
+	[7, "Recebimento TED", "inflow"],
+	[8, "Recebimento DOC", "inflow"],
+	[9, "Aluguel", "outflow"]
 ]
 
 transaction_type_list.each do |id, desc, operation|

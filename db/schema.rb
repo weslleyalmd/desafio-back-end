@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 2019_05_12_013721) do
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "transaction_type_id"
-    t.integer "date"
     t.integer "amount"
     t.string "card"
+    t.date "date"
     t.string "time"
     t.bigint "store_id"
     t.datetime "created_at", null: false

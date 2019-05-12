@@ -11,9 +11,9 @@ class TransactionParser
     date       = line.slice(DATE_LINE_POSITION[:start_at], DATE_LINE_POSITION[:size])
     amount     = line.slice(AMOUNT_LINE_POSITION[:start_at], AMOUNT_LINE_POSITION[:size])
     card       = line.slice(CARD_LINE_POSITION[:start_at], CARD_LINE_POSITION[:size])
-    time       = line.slice(TIME_LINE_POSITION[:start_at], TIME_LINE_POSITION[:size])
+    time       = line.slice(TIME_LINE_POSITION[:start_at], TIME_LINE_POSITION[:size]).gsub(/(.{2})(?=.)/, '\1:\2')
 
-    Transaction.create(transaction_type_id: trans_type, date: date, amount: amount,
+    Transaction.create(transaction_type_id: trans_type, date: Date.parse(date), amount: amount,
                        card: card, time: time, store_id: store.id)
   end
 end

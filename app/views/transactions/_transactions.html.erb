@@ -1,0 +1,43 @@
+<div id="operations-modal-<%= store.id %>" class="modal-holder">
+  <div class="modal" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="mainModalLabel">
+            Transações
+          </h4>
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+        </div>
+        <div class="modal-body">      
+          <table class="transactions-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Cartão Utilizado</th>
+                <th>Data</th>
+                <th>Hora</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% store.transactions.each do |transaction| %>
+                <tr>
+                  <td><%= transaction.transaction_type.description %></td>
+                  <td class="<%= transaction_type_operation transaction %>" ><%= handle_money transaction.amount %></td>
+                  <td><%= transaction.card %></td>
+                  <td><%= parse_date transaction.date %></td>
+                  <td><%= transaction.time %></td>
+                </tr>
+
+              <% end %>
+            </tbody>
+          </table>   
+
+          <h4>Saldo em conta: <%= handle_total store.transactions %></h4> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
