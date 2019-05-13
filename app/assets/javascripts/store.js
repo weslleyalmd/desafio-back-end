@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 
   $(".bt-show-operations").click(function() {
     modal_prefix = $(this).attr("id");
@@ -6,4 +6,4 @@ $(function() {
     $(modal).find(".modal").modal();
   })
 
-})
+});

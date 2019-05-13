@@ -1,7 +1,7 @@
 class CNABParser
 
   def self.parse(file)
-    f = File.open(file, "r")
+    f = file['datafile'].read
     f.each_line { |line|
       parse_line line
     }

@@ -2,8 +2,8 @@
 
 one:
   description: MyString
-  type: 
+  operation: inflow 
 
 two:
   description: MyString
-  type: 
+  operation: inflow 

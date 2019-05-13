@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 1
-  date: 1
-  amount: 
+  transaction_type: 1
+  date: 20191212
+  amount: 2096
   card: MyString
   time: MyString
 
 two:
-  type: 1
-  date: 1
-  amount: 
+  transaction_type: 1
+  date: 20191212
+  amount: 2096
   card: MyString
   time: MyString

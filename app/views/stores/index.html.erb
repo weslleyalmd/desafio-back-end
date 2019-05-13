@@ -1,29 +1,37 @@
-<h1>Lojas</h1>
+<%= render partial: "layouts/menu" %>
 
-<div id="store-list">
-  <table id="store-list-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>CPF</th>
-        <th>Representante</th>
-        <th></th>
-      </tr>
-    </thead>
+<div class="content">
+  <h1>Lojas</h1>
 
-    <tbody>
-      <% @stores.each do |store| %>
-        <tr>
-          <td><%= store.name %></td>
-          <td><%= store.cpf %></td>
-          <td><%= store.owner %></td>
-          <td>
-            <button id="<%= store.id %>" class="bt-show-operations">Mostrar operações</button>
-            <%= render partial: "transactions/transactions", locals: {store: store} %>
-          </td>
-        </tr>
+  <div id="store-list">
+    <% if @stores.empty? %>
+      <h3>Não há lojas cadastradas</h3>
+    <% else %>
+      <table id="store-list-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Representante</th>
+            <th></th>
+          </tr>
+        </thead>
 
-      <% end %>
-    </tbody>
-  </table>
+        <tbody>
+          <% @stores.each do |store| %>
+            <tr>
+              <td><%= store.name %></td>
+              <td><%= format_cpf store.cpf %></td>
+              <td><%= store.owner %></td>
+              <td>
+                <button id="<%= store.id %>" class="bt-show-operations">Mostrar operações</button>
+                <%= render partial: "transactions/transactions", locals: {store: store} %>
+              </td>
+            </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>
