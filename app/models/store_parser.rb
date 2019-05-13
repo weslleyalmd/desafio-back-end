@@ -9,6 +9,6 @@ class StoreParser
     cpf   = line.slice(CPF_LINE_POSITION[:start_at], CPF_LINE_POSITION[:size])
     owner = line.slice(OWNER_LINE_POSITION[:start_at], OWNER_LINE_POSITION[:size]).strip
 
-    Store.www({name: name, cpf: cpf, owner: owner})
+    Store.check_store_exists({name: name, cpf: cpf, owner: owner})
   end
 end

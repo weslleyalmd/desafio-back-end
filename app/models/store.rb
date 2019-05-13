@@ -2,7 +2,7 @@ class Store < ApplicationRecord
 
   has_many :transactions
   
-  def self.www(parsed_store)
+  def self.check_store_exists(parsed_store)
     store = Store.where("cpf = '#{parsed_store[:cpf]}'").first
 
     if store.blank?
